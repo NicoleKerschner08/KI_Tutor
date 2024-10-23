@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="tutorPage.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorPage</title>
+</head>
+<body>
+    <header>
+        <img id="PageLogo" src="LandingLogo.svg" alt="Page Logo"/>
+        <nav>
+            <a href="TutorPage.html">Tutor</a>
+            <a href="WieFunktionierts.html">How does it work?</a>
+            <a href="index.html">About us</a>
+            <a href="Kontaktliste.html">Contact</a
+        </nav>
+    </header>
+    <main>
+        <div id="userInput">
+            <input type="text" name="question" id="question" placeholder="enter your question!"/>
+            <button type="submit" onclick="writeQuestionInTheSpeechBubble()">send</button>
+        </div>
+        <div id="conversation">
+            <div id="questionContainer"></div>
+            <div id="answers"></div>
+        </div>                  
+    </main>
+    <footer>
+        <div class="footer-content">
+        <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="TermsOfUse.html">Terms of Use</a></li>
+        </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function writeQuestionInTheSpeechBubble(){
+            let question = document.getElementById("question").value;
+            let questionContainer = document.getElementById("questionContainer");
+            questionContainer.innerHTML += "<div>"+question+"</div>"
+        }
+    </script>
+</body>
+
+</html>
