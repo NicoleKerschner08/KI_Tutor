@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to KI-Tutor mainpage</title>
+    <link rel="stylesheet" href="LandingCSS.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <img id="PageLogo" src="LandingLogo.svg" alt="Page Logo"/>
+        <nav>
+            <a href="TutorPage.html">Tutor</a>
+            <a href="WieFunktionierts.html">How does it work?</a>
+            <a href="index.html">About us</a>
+            <a href="Kontaktliste.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="HeroSection">
+            <h1 id="HeroHeader">Your personal AI-Tutor for all questions</h1>
+            <h3 id="HerosmallHeader">Get help for your homework, work-projects and much more</h3>
+            <div class="container">
+                <button id="ToTutor" onclick="redirectingFunc()">Get Started</button>
+            </div>
+            <div id="scrollArrow">&#x25BC;</div>
+        </div>
+
+        <div id="ScrollTarget" class="second-section">
+            <div class="features-section">
+                <h2>Our offer</h2>
+                <div class="features-container">
+                    <div class="feature">
+                        <img src="time-sand-svgrepo-com.svg" alt="Fast replies" class="feature-icon">
+                        <h3>Fast replies</h3>
+                        <p>Recieve instant replies to all of your questions.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="learn-svgrepo-com.svg" alt="Learn at all times" class="feature-icon">
+                        <h3>Learn at all times</h3>
+                        <p>Access all study materials anytime you need them.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="support-svgrepo-com.svg" alt="Individual support" class="feature-icon">
+                        <h3>Individual support</h3>
+                        <p>Recieve help for any problem.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h2>Video tutorial</h2>
+                <video controls>
+                    <source src="your-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="TermsOfUse.html">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Company. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="LandingJS.js"></script>
+</body>
+</html>
