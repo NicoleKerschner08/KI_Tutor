@@ -68,14 +68,21 @@ footer {
 }
 .styleFormular
 {
-font-size:25px;
+font-size:15px;
 font-weight:bold;
 font-family: arial,sans-serif;
 }
+h1
+{
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
 h2
 {
+    font-size: 1,5em;
+    margin-bottom: 20px;
     font-family: Arial, sans-serif;
-    font-size: 40px;
 }
 #E-MailProjekt
 {
@@ -83,12 +90,12 @@ h2
 }
 #button
 {
-    width: 150px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
     background-color:rgb(7, 198, 250);
     color:white;
     font-size: 30px;
-    border-radius: 20px;
+    border-radius: 15px;
     border-width:0px;
 }
 #container
@@ -96,4 +103,12 @@ h2
     margin-left:5%;
     margin-top:5%;
     margin-bottom:5%;
+}
+#containersozialmedia{
+    flex-wrap:wrap;
+    display:flex;
+}
+.SocialMedia
+{
+    margin: 20px;
 }
