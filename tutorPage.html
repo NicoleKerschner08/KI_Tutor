@@ -46,12 +46,8 @@
     answerDiv.textContent = "This is an answer.";
     answerDiv.className = "answer-bubble";
 
-    const qaContainer = document.createElement("div");
-    qaContainer.className = "qa-container"; // Flexbox-Container für Frage und Antwort
-    qaContainer.appendChild(questionDiv);
-    qaContainer.appendChild(answerDiv);
-
-    questionContainer.appendChild(qaContainer);
+    questionContainer.appendChild(questionDiv);
+    questionContainer.appendChild(answerDiv);
     document.getElementById("question").value = "";
 }
 
