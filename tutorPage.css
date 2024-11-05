@@ -22,7 +22,7 @@
             justify-content: space-around;
             font-size: 20px;
             font-weight: bold;
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, 'monospace';
             margin-left: 15px;
             flex-grow: 1;
         }
@@ -47,10 +47,13 @@
             flex-direction: column;
             align-items: flex-start;
             overflow-y: auto; /* Aktiviert vertikales Scrollen */
-            max-height: 55vh; /* Setze die maximale Höhe des Konversationsbereichs */
+            max-height: 52vh; /* Setze die maximale Höhe des Konversationsbereichs */
             padding: 10px; /* Füge etwas Padding hinzu */
             border: 1px solid rgb(200, 200, 200); /* Optional: füge einen Rand hinzu */
             border-radius: 10px; /* Optional: abgerundete Ecken */
+            width: 75%;
+            align-self: center;
+            background-color: lightgrey;
         }
         
         
@@ -59,35 +62,43 @@
         }
         
         .question-bubble {
-            background-color: rgb(230, 240, 250);
+            background-color: lightcyan;
             padding: 10px;
             border-radius: 10px;
             max-width: 60%;
             margin-bottom: 5px;
             width: fit-content;
-            margin-left: 20%;
+            font-size: 20px;
+            word-wrap: break-word; /* Erlaubt Zeilenumbruch */
+            overflow-wrap: break-word; /* Kompatibel mit verschiedenen Browsern */
+            white-space: normal; /* Setzt den Textfluss zurück auf den normalen Fluss */
         }
         
         .answer-bubble {
-            background-color: rgb(210, 230, 250);
+            background-color: white;
             padding: 10px;
             border-radius: 10px;
             max-width: 60%;
             margin-left: auto; 
             text-align: left;
-            width:fit-content;
-            margin-right: 20%;
+            width: fit-content;
+            font-size: 20px;
+            word-wrap: break-word; /* Erlaubt Zeilenumbruch */
+            overflow-wrap: break-word; /* Kompatibel mit verschiedenen Browsern */
+            white-space: normal; /* Setzt den Textfluss zurück auf den normalen Fluss */
         }
+        
         
         #userInput {
             display: flex;
             justify-content: center;
             padding: 10px;
             background-color: rgb(251, 251, 251);
+
         }
         input {
             text-align: center;
-            width: 70%;
+            width: 50%;
             border-radius: 20px;
             font-size: 20px;
             padding: 8px;
@@ -101,31 +112,27 @@
             margin-left: 10px;
         }
         footer {
-            padding: 10px;
-            text-align: center;
             background-color: rgb(251, 251, 251);
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
         }
-        footer ul {
-            list-style: none;
+        .footer-content {
+            margin-bottom: 10px;
+        }
+        .footer-links {
+            list-style-type: none;
             padding: 0;
         }
-        footer ul li {
+        .footer-links li {
             display: inline;
             margin: 0 10px;
         }
-        footer a {
-            color: rgb(7, 198, 250);
+        .footer-links a {
             text-decoration: none;
+            color: rgb(7, 198, 250);
         }
-        footer a:hover {
+        .footer-links a:hover {
             text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            nav {
-                font-size: 16px;
-            }
-            #PageLogo {
-                max-width: 100px;
-            }
         }
    
