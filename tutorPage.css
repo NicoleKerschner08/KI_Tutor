@@ -22,7 +22,7 @@
             justify-content: space-around;
             font-size: 20px;
             font-weight: bold;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Arial, sans-serif;
             margin-left: 15px;
             flex-grow: 1;
         }
@@ -46,17 +46,16 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            overflow-y: auto;
+            overflow-y: auto; /* Aktiviert vertikales Scrollen */
+            max-height: 55vh; /* Setze die maximale Höhe des Konversationsbereichs */
+            padding: 10px; /* Füge etwas Padding hinzu */
+            border: 1px solid rgb(200, 200, 200); /* Optional: füge einen Rand hinzu */
+            border-radius: 10px; /* Optional: abgerundete Ecken */
         }
-        #questionContainer {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .qa-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+        
+        
+        #questionContainer{
+            width:100%;
         }
         
         .question-bubble {
@@ -64,6 +63,9 @@
             padding: 10px;
             border-radius: 10px;
             max-width: 60%;
+            margin-bottom: 5px;
+            width: fit-content;
+            margin-left: 20%;
         }
         
         .answer-bubble {
@@ -71,7 +73,10 @@
             padding: 10px;
             border-radius: 10px;
             max-width: 60%;
-            text-align: right;
+            margin-left: auto; 
+            text-align: left;
+            width:fit-content;
+            margin-right: 20%;
         }
         
         #userInput {
