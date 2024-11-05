@@ -1,101 +1,126 @@
-body {
-    background-color: rgb(251, 251, 251);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-header {
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-    margin-left: 15px;
-    flex-grow: 1;
-}
-nav a {
-    color: rgb(7, 198, 250);
-    margin-left: 15px;
-    text-decoration: none;
-}
-nav a:hover {
-    text-decoration: underline;
-}
-#PageLogo {
-    max-width: 140px;
-    max-height: 140px;
-    margin-top: 15px;
-}
-@media (max-width: 600px) {
-    nav {
-        font-size: 16px;
-    }
-    nav a {
-        margin-left: 10px;
-    }
-    #PageLogo {
-        max-width: 100px;
-        max-height: 100px;
-    }
-}
 
-footer {
-    background-color: rgb(251, 251, 251);
-    padding: 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-.footer-content {
-    margin-bottom: 10px;
-}
-.footer-links {
-    list-style-type: none;
-    padding: 0;
-}
-.footer-links li {
-    display: inline;
-    margin: 0 10px;
-}
-.footer-links a {
-    text-decoration: none;
-    color: rgb(7, 198, 250);
-}
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-input{
-    text-align: center;
-    width: 800px;
-    border-radius: 20px;
-    font-size: 25px;
-}
-
-button{
-    border-radius: 10px;
-    width: 100px;
-    font-size: 25px;
-    background-color: rgb(7, 198, 250);
-    color:white;
-}
-#userInput {
-    display: flex;
-    justify-content: center;
-    height: 50px;
-    padding: 10px;
-    background-color: rgb(251, 251, 251); 
-}
-
-main {
-    flex-grow: 1; 
-    display: flex;
-    flex-direction: column; /* Stapelt den Inhalt im main-Bereich vertikal */
-    justify-content: flex-end; 
-}
+        body {
+            background-color: rgb(251, 251, 251);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        header {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        #PageLogo {
+            max-width: 140px;
+            margin: 15px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            margin-left: 15px;
+            flex-grow: 1;
+        }
+        nav a {
+            color: rgb(7, 198, 250);
+            margin-left: 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+        #conversation {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            overflow-y: auto;
+        }
+        #questionContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .qa-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .question-bubble {
+            background-color: rgb(230, 240, 250);
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 60%;
+        }
+        
+        .answer-bubble {
+            background-color: rgb(210, 230, 250);
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 60%;
+            text-align: right;
+        }
+        
+        #userInput {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: rgb(251, 251, 251);
+        }
+        input {
+            text-align: center;
+            width: 70%;
+            border-radius: 20px;
+            font-size: 20px;
+            padding: 8px;
+        }
+        button {
+            border-radius: 10px;
+            width: 100px;
+            font-size: 20px;
+            background-color: rgb(7, 198, 250);
+            color: white;
+            margin-left: 10px;
+        }
+        footer {
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(251, 251, 251);
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer a {
+            color: rgb(7, 198, 250);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            nav {
+                font-size: 16px;
+            }
+            #PageLogo {
+                max-width: 100px;
+            }
+        }
+   
