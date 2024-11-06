@@ -17,46 +17,80 @@
         </nav>
     </header>
 
-<div id="container">
-    <h1>Contact</h1>
+    <div id="container">
+        <h1>Contact</h1>
 
-    <label class="styleFormular">Name:</label>
-    <input class="input" type="text">
-    <p></p>
-    <label class="styleFormular">E-Mail:</label>
-    <input type="text">
-    <p></p>
-    <label class="styleFormular">Reference:</label>
-    <input type="text">
-    <p></p>
-    <label class="styleFormular">Message:</label>
-    <input type="text">
-    <p></p>
-    <button id="button">Send</button> 
+        <form id="contactForm">
+            <label class="styleFormular">Name:</label>
+            <input name="Name" type="text" required>
+            
+            <label class="styleFormular">E-Mail:</label>
+            <input name="EMail" type="email" required>
+            
+            <label class="styleFormular">Reference:</label>
+            <input name="Reference" type="text" required>
+            
+            <label class="styleFormular">Message:</label>
+            <textarea name="Message" required></textarea>
+            
+            <input value="Send" type="submit" id="button">
+        </form>
 
-    <h2>Alternative Contact Information:</h2>
-    <div class="SocialMedia"><a href="https://mail.google.com/mail/u/5/#search/ki.tutorai%40gmail.com?compose=new"><img height="50px" src="E-Mail.png"></a></div>
+        <h2>Alternative Contact Information</h2>
+        <div class="SocialMedia"><a href="https://mail.google.com/mail/u/5/#search/ki.tutorai%40gmail.com?compose=new"><img height="50px" src="E-Mail.png" alt="Email"></a></div>
 
-<h2>Social Media Links</h2>
-<div id="containersozialmedia">
-     <div class="SocialMedia"><a href="https://www.instagram.com/kitutorai/"><img height="50px" src="Instagramm.png"></a></div>
-     <div class="SocialMedia"><a href="https://www.youtube.com/channel/UCD3IvpwLz5NZqeX3Dkhj3Wg"><img height="50px" src="Youtube.png"></a></div>
-     <div class="SocialMedia"><a href="https://www.facebook.com/profile.php?id=61568176025248"><img height="50px" src="Facebook.webp"></a></div>
-</div>
-<h2>Map</h2>
-<iframe src="https://www.google.com/maps/place/HTL+Waidhofen/@47.950561,14.7842044,659m/data=!3m2!1e3!4b1!4m6!3m5!1s0x477230431d85d13b:0xbbc0eaf3043592e7!8m2!3d47.9505574!4d14.7867847!16s%2Fg%2F1tfb5c_m?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <h2>Social Media Links</h2>
+        <div id="containersozialmedia">
+            <div class="SocialMedia"><a href="https://www.instagram.com/kitutorai/"><img height="50px" src="Instagramm.png" alt="Instagram"></a></div>
+            <div class="SocialMedia"><a href="https://www.youtube.com/channel/UCD3IvpwLz5NZqeX3Dkhj3Wg"><img height="50px" src="Youtube.png" alt="YouTube"></a></div>
+            <div class="SocialMedia"><a href="https://www.facebook.com/profile.php?id=61568176025248"><img height="50px" src="Facebook.webp" alt="Facebook"></a></div>
+        </div>
 
-</div>
-<footer>
-    <div class="footer-content">
-    <ul class="footer-links">
-    <li><a href="privacy-policy.html"  style="color: black">Privacy Policy</a></li>
-    <li><a href="TermsOfUse.html" style="color: black">Terms of Use</a></li>
-    </ul>
+        <h2>Map</h2>
+        <div class="SocialMedia"><a href="https://www.google.com/maps/place/HTL+Waidhofen/@47.950561,14.7842044,659m/data=!3m2!1e3!4b1!4m6!3m5!1s0x477230431d85d13b:0xbbc0eaf3043592e7!8m2!3d47.9505574!4d14.7867847!16s%2Fg%2F1tfb5c_m?hl=de&entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"><img height="100px" src="Maps.png" alt="Map"></a></div>
+
     </div>
-    <div class="footer-bottom">
-    <p>&copy; 2024 Company. All rights reserved.</p>
-    </div>
-</footer>
+
+    <footer>
+        <div class="footer-content">
+        <ul class="footer-links">
+        <li><a href="privacy-policy.html"  style="color: black">Privacy Policy</a></li>
+        <li><a href="TermsOfUse.html" style="color: black">Terms of Use</a></li>
+        </ul>
+        </div>
+        <div class="footer-bottom">
+        <p>&copy; 2024 Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const name = document.querySelector('input[name="Name"]').value;
+            const email = document.querySelector('input[name="EMail"]').value;
+            const reference = document.querySelector('input[name="Reference"]').value;
+            const message = document.querySelector('textarea[name="Message"]').value;
+        
+            emailjs.send("service_e6v87ry", "template_hyvlbfa", {
+                Name: name,
+                EMail: email,
+                Reference: reference,
+                Message: message
+            })
+            .then(function(response) {
+                alert("Message sent successfully!");
+            }, function(error) {
+                alert("Error sending message: " + error.text);
+            });
+        });
+    </script>
+    
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("service_e6v87ry");
+        })();
+    </script>
 </body>
 </html>
