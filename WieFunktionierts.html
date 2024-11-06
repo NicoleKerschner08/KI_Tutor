@@ -16,33 +16,67 @@
             <a href="Kontaktliste.html">Contact</a>
         </nav>
     </header>
-  <div id="container">
-    <h1>WieFunktionierts</h1>
 
-    <h2>Step by step instructions: </h2>
-    <img source="">
-    <img source="">
-    <img source="">
-    <h2><label>Common Questions: </label></h2>
-        <select id="Questions">     
+    <div id="container">
+        <h1>WieFunktionierts</h1>
+
+        <h2>Step by step instructions:</h2>
+        <div class="image-container">
+            <img src="" alt="Step 1">
+            <img src="" alt="Step 2">
+            <img src="" alt="Step 3">
+        </div>
+
+        <h2><label>Common Questions:</label></h2>
+        <select id="Questions" onchange="showAnswer()">     
             <option value="Howdoesitwork">How do I ask the tutor questions?</option>
             <option value="Settings">How can I get into the settings?</option>
             <option value="WhichQuestions">What questions should I ask?</option>    
         </select>
-    
-    <h2>Video Tutorial: </h2>
-</div>
 
-<footer>
-    <div class="footer-content">
-    <ul class="footer-links">
-    <li><a href="privacy-policy.html"  style="color: black">Privacy Policy</a></li>
-    <li><a href="TermsOfUse.html" style="color: black">Terms of Use</a></li>
-    </ul>
+        <div id="answer" class="answer">
+            <!-- Antworten werden hier angezeigt -->
+        </div>
+    
+        <h2>Video Tutorial:</h2>
+        <!-- You can add a video here if needed -->
     </div>
-    <div class="footer-bottom">
-    <p>&copy; 2024 Company. All rights reserved.</p>
-    </div>
-</footer>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="privacy-policy.html" style="color: black">Privacy Policy</a></li>
+                <li><a href="TermsOfUse.html" style="color: black">Terms of Use</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showAnswer() {
+            var question = document.getElementById("Questions").value;
+            var answerDiv = document.getElementById("answer");
+            var answerText = "";
+
+            switch(question) {
+                case "Howdoesitwork":
+                    answerText = "<p>To ask the tutor questions you have to go to the tutor page and write something in the question field!</p>";
+                    break;
+                case "Settings":
+                    answerText = "<p>You have to click on the profile picture and scroll down</p>";
+                    break;
+                case "WhichQuestions":
+                    answerText = "<p>Ask detailed questions about a specific topic. Examples (texts, invoices, weather, ...)</p>";
+                    break;
+                default:
+                    answerText = "<p>Select a question to see the answer.</p>";
+            }
+
+            answerDiv.innerHTML = answerText;
+        }
+    </script>
 </body>
 </html>
+
