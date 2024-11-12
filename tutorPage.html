@@ -33,7 +33,10 @@
             <input type="text" id="question" placeholder="Enter your question!"/>
             <button onclick="writeQuestionInTheSpeechBubble()">Send</button>
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e481fabd8e478e0eecdedc9a1777f625021fdefc
     </main>
     <footer>
         <div class="footer-content">
@@ -47,6 +50,77 @@
         </div>
     </footer>
 
+<<<<<<< HEAD
     <script src="tutorPage.js"></script>
+=======
+    <script>
+       // Function to load conversation from localStorage
+       function loadConversation() {
+            const conversation = JSON.parse(localStorage.getItem("conversation")) || [];
+
+            const questionContainer = document.getElementById("questionContainer");
+            conversation.forEach(entry => {
+                const questionDiv = document.createElement("div");
+                questionDiv.textContent = entry.question;
+                questionDiv.className = "question-bubble";
+
+                const answerDiv = document.createElement("div");
+                answerDiv.textContent = entry.answer;
+                answerDiv.className = "answer-bubble";
+
+                questionContainer.appendChild(questionDiv);
+                questionContainer.appendChild(answerDiv);
+            });
+        }
+
+        // Function to save conversation to localStorage
+        function saveConversation(question, answer) {
+            const conversation = JSON.parse(localStorage.getItem("conversation")) || [];
+            conversation.push({ question, answer });
+            localStorage.setItem("conversation", JSON.stringify(conversation));
+        }
+
+        function deleteOldConversation(){
+            localStorage.clear();
+            const questionContainer = document.getElementById("questionContainer");
+            questionContainer.innerHTML = ""; // Entfernt alle Nachrichten aus dem DOM      
+        }
+
+        // Function to handle question submission
+        function writeQuestionInTheSpeechBubble() {
+            const question = document.getElementById("question").value;
+            if (!question) return; // Exit if question input is empty
+
+            const answer = "This is an answer."; // Placeholder answer for now
+            const questionContainer = document.getElementById("questionContainer");
+
+            // Create and append question and answer bubbles
+            const questionDiv = document.createElement("div");
+            questionDiv.textContent = question;
+            questionDiv.className = "question-bubble";
+
+            const answerDiv = document.createElement("div");
+            answerDiv.textContent = answer;
+            answerDiv.className = "answer-bubble";
+
+            questionContainer.appendChild(questionDiv);
+            questionContainer.appendChild(answerDiv);
+
+            // Save question and answer to localStorage
+            saveConversation(question, answer);
+
+            // Clear the input field
+            document.getElementById("question").value = "";
+        }
+
+        // Load conversation on page load
+        window.onload = loadConversation;
+
+function resetDropdown() {
+        // Zurücksetzen auf den Platzhalter „Want better answers“
+        document.getElementById("hints").selectedIndex = 0;
+    }
+    </script>
+>>>>>>> e481fabd8e478e0eecdedc9a1777f625021fdefc
 </body>
 </html>
