@@ -24,7 +24,7 @@
                 <option>Be aware that not every answer you get is completely correct!</option>
                 <option>If the tutor is bugging, refresh the page and try again!</option>
             </select>
-            <button onclick="deleteOldConversation">new Conversation</button>
+            <button onclick="deleteOldConversation()">new Conversation</button>
         </div>
         <div id="conversation">    
             <div id="questionContainer"></div>
@@ -75,6 +75,8 @@
 
         function deleteOldConversation(){
             localStorage.clear();
+            const questionContainer = document.getElementById("questionContainer");
+            questionContainer.innerHTML = ""; // Entfernt alle Nachrichten aus dem DOM      
         }
 
         // Function to handle question submission
@@ -114,4 +116,3 @@ function resetDropdown() {
     </script>
 </body>
 </html>
-
