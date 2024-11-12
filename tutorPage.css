@@ -22,7 +22,7 @@
             justify-content: space-around;
             font-size: 20px;
             font-weight: bold;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Courier New', Courier, 'monospace';
             margin-left: 15px;
             flex-grow: 1;
         }
@@ -46,81 +46,122 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            overflow-y: auto;
+            overflow-y: auto; /* Aktiviert vertikales Scrollen */
+            max-height: 48vh; /* Setze die maximale Höhe des Konversationsbereichs */
+            padding: 10px; /* Füge etwas Padding hinzu */
+            border: 1px solid rgb(200, 200, 200); /* Optional: füge einen Rand hinzu */
+            border-radius: 10px; /* Optional: abgerundete Ecken */
+            width: 75%;
+            align-self: center;
+            background-color: lightgrey;
         }
-        #questionContainer {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .qa-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+        
+        
+        #questionContainer{
+            width:100%;
         }
         
         .question-bubble {
-            background-color: rgb(230, 240, 250);
+            background-color: lightcyan;
             padding: 10px;
             border-radius: 10px;
             max-width: 60%;
+            margin-left: auto; 
+            text-align: left;
+            width: fit-content;
+            font-size: 20px;
+            word-wrap: break-word; /* Erlaubt Zeilenumbruch */
+            overflow-wrap: break-word; /* Kompatibel mit verschiedenen Browsern */
+            white-space: normal; /* Setzt den Textfluss zurück auf den normalen Fluss */
+            
         }
         
         .answer-bubble {
-            background-color: rgb(210, 230, 250);
+            background-color: white;
             padding: 10px;
             border-radius: 10px;
             max-width: 60%;
-            text-align: right;
+            margin-bottom: 5px;
+            width: fit-content;
+            font-size: 20px;
+            word-wrap: break-word; /* Erlaubt Zeilenumbruch */
+            overflow-wrap: break-word; /* Kompatibel mit verschiedenen Browsern */
+            white-space: normal; /* Setzt den Textfluss zurück auf den normalen Fluss */
         }
+        
         
         #userInput {
             display: flex;
             justify-content: center;
             padding: 10px;
             background-color: rgb(251, 251, 251);
+
         }
         input {
             text-align: center;
-            width: 70%;
+            width: 50%;
             border-radius: 20px;
             font-size: 20px;
             padding: 8px;
         }
         button {
             border-radius: 10px;
-            width: 100px;
+            width: 120px;
             font-size: 20px;
             background-color: rgb(7, 198, 250);
             color: white;
             margin-left: 10px;
         }
         footer {
-            padding: 10px;
-            text-align: center;
             background-color: rgb(251, 251, 251);
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
         }
-        footer ul {
-            list-style: none;
+        .footer-content {
+            margin-bottom: 10px;
+        }
+        .footer-links {
+            list-style-type: none;
             padding: 0;
         }
-        footer ul li {
+        .footer-links li {
             display: inline;
             margin: 0 10px;
         }
-        footer a {
-            color: rgb(7, 198, 250);
+        .footer-links a {
             text-decoration: none;
+            color: rgb(7, 198, 250);
         }
-        footer a:hover {
+        .footer-links a:hover {
             text-decoration: underline;
         }
-        @media (max-width: 600px) {
-            nav {
-                font-size: 16px;
-            }
-            #PageLogo {
-                max-width: 100px;
-            }
+
+        #container{
+            margin-bottom: 5px;
+            margin-top: -10px;
         }
-   
+
+        #hints {
+            width: 170px; /* Setze die Breite auf die gewünschte Größe */
+            white-space: nowrap; /* Verhindert Zeilenumbrüche */
+            overflow: hidden; /* Blendet den Text über die Breite hinaus aus */
+            font-size: 16px;
+            border-radius: 20px;
+            border: 2px solid #ccc;
+            padding: 8px;
+            margin-top: 10px;
+            background-color: #fff;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+ 
+        #hints:focus {
+            border-color: #0078d4;
+            outline: none;
+        }
+
+        #container{
+            display: flex;
+            
+        }

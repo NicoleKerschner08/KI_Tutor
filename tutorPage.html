@@ -17,7 +17,16 @@
         </nav>
     </header>
     <main>
-        <div id="conversation">
+        <div id="container">
+            <select name="hints" id="hints" onchange="resetDropdown()">
+                <option disabled selected hidden>helpful hints</option>
+                <option>Ask more specific questions to get better answers!</option>
+                <option>Be aware that not every answer you get is completely correct!</option>
+                <option>If the tutor is bugging, refresh the page and try again!</option>
+            </select>
+            <button onclick="deleteOldConversation()">new Conversation</button>
+        </div>
+        <div id="conversation">    
             <div id="questionContainer"></div>
         </div>
         <div id="userInput">
@@ -26,35 +35,80 @@
         </div>
     </main>
     <footer>
-        <ul>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="TermsOfUse.html">Terms of Use</a></li>
+        <div class="footer-content">
+        <ul class="footer-links">
+        <li><a href="privacy-policy.html"  style="color: black">Privacy Policy</a></li>
+        <li><a href="TermsOfUse.html" style="color: black">Terms of Use</a></li>
         </ul>
+        </div>
+        <div class="footer-bottom">
         <p>&copy; 2024 Company. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
+
+       function loadConversation() {
+            const conversation = JSON.parse(localStorage.getItem("conversation")) || [];
+
+            const questionContainer = document.getElementById("questionContainer");
+            conversation.forEach(entry => {
+                const questionDiv = document.createElement("div");
+                questionDiv.textContent = entry.question;
+                questionDiv.className = "question-bubble";
+
+                const answerDiv = document.createElement("div");
+                answerDiv.textContent = entry.answer;
+                answerDiv.className = "answer-bubble";
+
+                questionContainer.appendChild(questionDiv);
+                questionContainer.appendChild(answerDiv);
+            });
+        }
+
+        function saveConversation(question, answer) {
+            const conversation = JSON.parse(localStorage.getItem("conversation")) || [];
+            conversation.push({ question, answer });
+            localStorage.setItem("conversation", JSON.stringify(conversation));
+        }
+
+        function deleteOldConversation(){
+            localStorage.clear();
+            const questionContainer = document.getElementById("questionContainer");
+            questionContainer.innerHTML = "";    
+        }
+
+ 
         function writeQuestionInTheSpeechBubble() {
-    const question = document.getElementById("question").value;
-    const questionContainer = document.getElementById("questionContainer");
+            const question = document.getElementById("question").value;
+            if (!question) return; 
 
-    const questionDiv = document.createElement("div");
-    questionDiv.textContent = question;
-    questionDiv.className = "question-bubble";
+            const answer = "This is an answer."; 
+            const questionContainer = document.getElementById("questionContainer");
 
-    const answerDiv = document.createElement("div");
-    answerDiv.textContent = "This is an answer.";
-    answerDiv.className = "answer-bubble";
+            const questionDiv = document.createElement("div");
+            questionDiv.textContent = question;
+            questionDiv.className = "question-bubble";
 
-    const qaContainer = document.createElement("div");
-    qaContainer.className = "qa-container"; // Flexbox-Container für Frage und Antwort
-    qaContainer.appendChild(questionDiv);
-    qaContainer.appendChild(answerDiv);
+            const answerDiv = document.createElement("div");
+            answerDiv.textContent = answer;
+            answerDiv.className = "answer-bubble";
 
-    questionContainer.appendChild(qaContainer);
-    document.getElementById("question").value = "";
-}
+            questionContainer.appendChild(questionDiv);
+            questionContainer.appendChild(answerDiv);
 
+ 
+            saveConversation(question, answer);
+
+ 
+            document.getElementById("question").value = "";
+        }
+
+        window.onload = loadConversation;
+
+function resetDropdown() {
+        document.getElementById("hints").selectedIndex = 0;
+    }
     </script>
 </body>
 </html>
