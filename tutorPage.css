@@ -1,4 +1,5 @@
 
+  
         body {
             background-color: rgb(251, 251, 251);
             display: flex;
@@ -47,7 +48,7 @@
             flex-direction: column;
             align-items: flex-start;
             overflow-y: auto; /* Aktiviert vertikales Scrollen */
-            max-height: 52vh; /* Setze die maximale Höhe des Konversationsbereichs */
+            max-height: 48vh; /* Setze die maximale Höhe des Konversationsbereichs */
             padding: 10px; /* Füge etwas Padding hinzu */
             border: 1px solid rgb(200, 200, 200); /* Optional: füge einen Rand hinzu */
             border-radius: 10px; /* Optional: abgerundete Ecken */
@@ -66,12 +67,14 @@
             padding: 10px;
             border-radius: 10px;
             max-width: 60%;
-            margin-bottom: 5px;
+            margin-left: auto; 
+            text-align: left;
             width: fit-content;
             font-size: 20px;
             word-wrap: break-word; /* Erlaubt Zeilenumbruch */
             overflow-wrap: break-word; /* Kompatibel mit verschiedenen Browsern */
             white-space: normal; /* Setzt den Textfluss zurück auf den normalen Fluss */
+            
         }
         
         .answer-bubble {
@@ -79,8 +82,7 @@
             padding: 10px;
             border-radius: 10px;
             max-width: 60%;
-            margin-left: auto; 
-            text-align: left;
+            margin-bottom: 5px;
             width: fit-content;
             font-size: 20px;
             word-wrap: break-word; /* Erlaubt Zeilenumbruch */
@@ -105,7 +107,7 @@
         }
         button {
             border-radius: 10px;
-            width: 100px;
+            width: 120px;
             font-size: 20px;
             background-color: rgb(7, 198, 250);
             color: white;
@@ -135,4 +137,32 @@
         .footer-links a:hover {
             text-decoration: underline;
         }
-   
+
+        #container{
+            margin-bottom: 5px;
+            margin-top: -10px;
+        }
+
+        #hints {
+            width: 170px; /* Setze die Breite auf die gewünschte Größe */
+            white-space: nowrap; /* Verhindert Zeilenumbrüche */
+            overflow: hidden; /* Blendet den Text über die Breite hinaus aus */
+            font-size: 16px;
+            border-radius: 20px;
+            border: 2px solid #ccc;
+            padding: 8px;
+            margin-top: 10px;
+            background-color: #fff;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+ 
+        #hints:focus {
+            border-color: #0078d4;
+            outline: none;
+        }
+
+        #container{
+            display: flex;
+            
+        }
