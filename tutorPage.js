@@ -1,5 +1,3 @@
-
-
 function loadConversation() {
      const conversation = JSON.parse(localStorage.getItem("conversation")) || [];
 
@@ -31,11 +29,12 @@ function loadConversation() {
  }
 
 
- function writeQuestionInTheSpeechBubble() {
+ async function writeQuestionInTheSpeechBubble() {
      const question = document.getElementById("question").value;
      if (!question) return; 
 
-     const answer = "This is an answer."; 
+     const answer = await askOpenAI(question);
+     console.log(answer);
      const questionContainer = document.getElementById("questionContainer");
 
      const questionDiv = document.createElement("div");
@@ -60,4 +59,39 @@ function loadConversation() {
 
 function resetDropdown() {
  document.getElementById("hints").selectedIndex = 0;
+}
+
+async function askOpenAI(question) {
+    try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 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"
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo", // Das korrekte Modell für den Chat-Endpunkt
+                messages: [{ role: "user", content: question }], // Verwenden Sie das 'messages'-Format für Chat-Modelle
+                max_tokens: 50,
+                temperature: 0.5,
+            })
+        });
+
+        if (!response.ok) {
+            const errorDetails = await response.json();
+            console.log("Fehlerdetails:", errorDetails);
+            throw new Error(`Request failed with status ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        if (!data.choices || !data.choices[0]) {
+            console.log("Unerwartete Antwortstruktur:", data);
+            throw new Error("Die Antwort enthält keine 'choices'-Daten.");
+        }
+
+        return data.choices[0].message.content.trim();
+    } catch (error) {
+        console.error("Fehler:", error.message);
+        return "Es gab ein Problem mit der Anfrage.";
+    }
 }
