@@ -137,40 +137,46 @@ nav a:hover {
 }
 
 footer {
-    color: black;
-    background-color:rgb(7, 198, 250);
     padding: 20px;
     text-align: center;
     font-family: Arial, sans-serif;
+    color: #333;
+    background-color:rgb(7, 198, 250);
     animation: fadeIn 2s ease-in-out; 
-    margin-top: auto; 
+    margin-top: auto;
 }
-
 .footer-content {
-    margin-bottom: 10px; 
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 15px;
 }
-
+.footer-description {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
 .footer-links {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
-
 .footer-links li {
     display: inline;
     margin: 0 10px;
 }
-
 .footer-links a {
     text-decoration: none;
-    color: black;
+    color: rgb(7, 198, 250);
 }
-
 .footer-links a:hover {
     text-decoration: underline;
+    color: #005f8f;
 }
-
 .footer-bottom {
-    padding-top: 10px;
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 10px;
 }
 
 .features-section {
