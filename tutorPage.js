@@ -67,7 +67,7 @@ async function askOpenAI(question) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer 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"
+                "Authorization": "Bearer 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"
             },
             body: JSON.stringify({
                 model: "gpt-3.5-turbo", // Das korrekte Modell für den Chat-Endpunkt
