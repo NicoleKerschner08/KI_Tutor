@@ -219,7 +219,7 @@ footer {
 }
 @media (max-width: 600px) {
     nav {
-        font-size: 16px;
+        font-size: 13px;
     }
     
     nav a {
