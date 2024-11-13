@@ -48,12 +48,14 @@ async function writeQuestionInTheSpeechBubble() {
     questionContainer.appendChild(questionDiv);
     questionContainer.appendChild(answerDiv);
 
-
     saveConversation(question, answer);
 
+    // Add a small delay to ensure elements are rendered before scrolling
+    setTimeout(scrollToBottom, 200);
 
     document.getElementById("question").value = "";
 }
+
 
 
 function resetDropdown() {
@@ -111,3 +113,10 @@ window.onload = function(){
    loadConversation();
 }
 
+function scrollToBottom() {
+    const questionContainer = document.getElementById("questionContainer");
+    const lastBubble = questionContainer.lastElementChild;
+    if (lastBubble) {
+        lastBubble.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+}
