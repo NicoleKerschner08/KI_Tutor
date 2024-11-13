@@ -55,7 +55,6 @@ function loadConversation() {
      document.getElementById("question").value = "";
  }
 
- window.onload = loadConversation;
 
 function resetDropdown() {
  document.getElementById("hints").selectedIndex = 0;
@@ -95,3 +94,21 @@ async function askOpenAI(question) {
         return "Es gab ein Problem mit der Anfrage.";
     }
 }
+
+function PressEnter() {
+    const questionInput = document.getElementById("question");
+    questionInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") { // Check if the Enter key is pressed
+            event.preventDefault();   // Prevent default form submission behavior
+            writeQuestionInTheSpeechBubble(); // Call function to handle the question
+        }
+    });
+}
+
+PressEnter();
+
+window.onload = function(){
+    loadConversation();
+    PressEnter();
+}
+
