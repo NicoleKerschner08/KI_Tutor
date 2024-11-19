@@ -15,7 +15,8 @@ var server = http.createServer(function (req, res) {
         '/Kontaktliste.html': 'Kontaktliste.html',
         '/WieFunktionierts.html': 'WieFunktionierts.html',
         '/TermsOfUse.html': 'TermsOfUse.html',
-        '/privacy-policy.html': 'privacy-policy.html'
+        '/privacy-policy.html': 'privacy-policy.html',
+        '/KI_tutorial.mp4': 'KI_tutorial.mp4'
     };
 
   
@@ -95,6 +96,9 @@ function serveStaticAssets(url, res) {
                 break;
             case '.ico':
                 contentType = 'image/x-icon';
+                break;
+            case '.mp4':
+                contentType = 'video/mp4';
                 break;
         }
 
