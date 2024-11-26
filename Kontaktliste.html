@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Kontaktliste.css"/>
+    <title>ContactList</title>
+</head>
+<script>document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const Name = document.getElementById('Name').value;
+    const Email = document.getElementById('EMail').value;
+    const Reference = document.getElementById('Reference').value;
+    const Message = document.getElementById('Message').value;
+    window.location.href = `mailto:https://formspree.io/f/xdkozddk?subject=Contact Form Submission&body=Name: ${Name}%0AEmail: ${Email}%0AMessage: ${Message}`;
+  });
+</script>
+<body>
+    <header>
+        <a href="LandingPageSite.html"><img id="PageLogo" src="LandingLogo.svg" alt="Page Logo"/><a/>
+        <nav>
+            <a href="TutorPage.html">Tutor</a>
+            <a href="WieFunktionierts.html">How does it work?</a>
+            <a href="index.html">About us</a>
+            <a href="Kontaktliste.html">Contact</a>
+        </nav>
+    </header>
+
+    <div id="container">
+        <h1>Contact</h1>
+
+        <form id="contactForm" action="https://formspree.io/f/xdkozddk" method="POST">
+            <label class="styleFormular">Name:</label>
+            <input id="Name" name="Name" type="text" required>
+            
+            <label class="styleFormular">E-Mail:</label>
+            <input id="EMail" name="EMail" type="email" required>
+            
+            <label class="styleFormular">Reference:</label>
+            <input id="Reference" name="Reference" type="text" required>
+            
+            <label class="styleFormular">Message:</label>
+            <textarea id="Message" name="Message" required></textarea>
+            
+            <input  value="Send" type="submit" id="button">
+        </form>
+
+        <h2>Alternative Contact Information</h2>
+        <div class="SocialMedia"><a href="https://mail.google.com/mail/u/5/#search/ki.tutorai%40gmail.com?compose=new"><img height="50px" src="E-Mail.png" alt="Email"></a></div>
+
+        <h2>Social Media Links</h2>
+        <div id="containersozialmedia">
+            <div class="SocialMedia"><a href="https://www.instagram.com/kitutorai/"><img height="50px" src="Instagramm.png" alt="Instagram"></a></div>
+            <div class="SocialMedia"><a href="https://www.youtube.com/channel/UCD3IvpwLz5NZqeX3Dkhj3Wg"><img height="50px" src="Youtube.png" alt="YouTube"></a></div>
+            <div class="SocialMedia"><a href="https://www.facebook.com/profile.php?id=61568176025248"><img height="50px" src="Facebook.webp" alt="Facebook"></a></div>
+        </div>
+
+        <h2>Map</h2>
+        <div class="SocialMedia"><a href="https://www.google.com/maps/place/HTL+Waidhofen/@47.950561,14.7842044,659m/data=!3m2!1e3!4b1!4m6!3m5!1s0x477230431d85d13b:0xbbc0eaf3043592e7!8m2!3d47.9505574!4d14.7867847!16s%2Fg%2F1tfb5c_m?hl=de&entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"><img height="100px" src="Maps.png" alt="Map"></a></div>
+
+    </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-description">
+                    <p>
+                        KI Tutor connects users with ChatGPT, offering interactive AI support for learning and development.
+                    </p>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html" style="color: black">Privacy Policy</a></li>
+                    <li><a href="TermsOfUse.html" style="color: black">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Company. All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>
+
+
