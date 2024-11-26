@@ -13,11 +13,11 @@ This project aims to make high-quality tutoring accessible to everyone.
 
 ## Installation
 Follow these steps to set up the project locally:
-1. **Clone the Repository**
+### 1. Clone the Repository
    ```bash
    git clone https://github.com/NicoleKerschner08/KI_Tutor.git
    cd ki-tutor
-
+```
 ### 2. Set Up Your API Key
 Obtain your API key from [OpenAI](https://platform.openai.com/) and securely configure it in the project.
 1. Open the JavaScript file where the API request is implemented.
@@ -32,7 +32,7 @@ You can now run the application:
 - Alternatively, serve it locally using Python or another HTTP server:
   ```bash
   python -m http.server
-Then, navigate to http://localhost:8000 in your browser.
+Then, navigate to http://localhost:9000 in your browser.
 
 
 
