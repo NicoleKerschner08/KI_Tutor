@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="tutorPage.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorPage</title>
+</head>
+<body>
+    <header>
+        <a href="LandingPageSite.html"><img id="PageLogo" src="LandingLogo.svg" alt="Page Logo"/><a/>
+        <nav>
+            <a href="TutorPage.html">Tutor</a>
+            <a href="WieFunktionierts.html">How does it work?</a>
+            <a href="index.html">About us</a>
+            <a href="Kontaktliste.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div id="container">
+            <select name="hints" id="hints" onchange="resetDropdown()">
+                <option disabled selected hidden>helpful hints</option>
+                <option>Ask more specific questions to get better answers!</option>
+                <option>Be aware that not every answer you get is completely correct!</option>
+                <option>If the tutor is bugging, refresh the page and try again!</option>
+            </select>
+            <button onclick="deleteOldConversation()">new Conversation</button>
+        </div>
+        <div id="conversation">    
+            <div id="questionContainer"></div>
+        </div>
+        <div id="userInput">
+            <input type="text" id="question" placeholder="Enter your question!"/>
+            <button onclick="writeQuestionInTheSpeechBubble()">Send</button>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-description">
+                    <p>
+                        KI Tutor connects users with ChatGPT, offering interactive AI support for learning and development.
+                    </p>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html" style="color: black">Privacy Policy</a></li>
+                    <li><a href="TermsOfUse.html" style="color: black">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Company. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+ 
+
+    <script src="tutorPage.js"></script>
+</body>
+</html>
