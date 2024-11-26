@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="WieFunktionierts.css"/>
+    <title>How does it work?</title>
+</head>
+<body>
+    <header>
+        <a href="LandingPageSite.html"><img id="PageLogo" src="LandingLogo.svg" alt="Page Logo"/><a/>
+        <nav>
+            <a href="TutorPage.html">Tutor</a>
+            <a href="WieFunktionierts.html">How does it work?</a>
+            <a href="index.html">About us</a>
+            <a href="Kontaktliste.html">Contact</a>
+        </nav>
+    </header>
+
+    <div id="container">
+        <h1>How does it Work?</h1>
+
+        <h2>Step by step instructions:</h2>
+        <div class="image-container">
+            <a href="Schritt1.png"><img src="Schritt1.png" height="300px" alt="Step 1"></a>
+            <a href="Schritt2.png"><img src="Schritt2.png" height="300px" alt="Step 2"></a>
+            <a href="Schritt3.png"><img src="Schritt3.png" height="300px" alt="Step 3"></a>
+            <a href="Schritt4.png"><img src="Schritt4.png" height="300px" alt="Step 4"></a>
+        </div>
+
+        <h2><label>Common Questions:</label></h2>
+        <select id="Questions" onchange="showAnswer()">     
+            <option value="Howdoesitwork">How do I ask the tutor questions?</option>
+            <option value="Settings">How can I get into the settings?</option>
+            <option value="WhichQuestions">What questions should I ask?</option>    
+        </select>
+
+        <div id="answer" class="answer">
+            <!-- Antworten werden hier angezeigt -->
+        </div>
+    
+        <h2>Video Tutorial:</h2>
+        <div class="video-section">
+            <video src="KI_tutorial.mp4" controls></video>
+        </div>
+        
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-description">
+                <p>
+                    KI Tutor connects users with ChatGPT, offering interactive AI support for learning and development.
+                </p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="privacy-policy.html" style="color: black">Privacy Policy</a></li>
+                <li><a href="TermsOfUse.html" style="color: black">Terms of Use</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Company. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function showAnswer() {
+            var question = document.getElementById("Questions").value;
+            var answerDiv = document.getElementById("answer");
+            var answerText = "";
+
+            switch(question) {
+                case "Howdoesitwork":
+                    answerText = "<p>To ask the tutor questions you have to go to the tutor page and write something in the question field!</p>";
+                    break;
+                case "Settings":
+                    answerText = "<p>You have to click on the profile picture and scroll down</p>";
+                    break;
+                case "WhichQuestions":
+                    answerText = "<p>Ask detailed questions about a specific topic. Examples (texts, invoices, weather, ...)</p>";
+                    break;
+                default:
+                    answerText = "<p>Select a question to see the answer.</p>";
+            }
+
+            answerDiv.innerHTML = answerText;
+        }
+    </script>
+</body>
+</html>
+
+
+
