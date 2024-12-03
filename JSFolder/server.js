@@ -60,7 +60,21 @@ function serveStaticAssets(url, res) {
         '/learn-svgrepo-com.svg': 'ImagesFolder/learn-svgrepo-com.svg',
         '/LandingLogo.svg': 'ImagesFolder/LandingLogo.svg',
         '/favicon.ico': 'ImagesFolder/favicon.ico',
-        '/time-sand-svgrepo-com.svg': 'ImagesFolder/time-sand-svgrepo-com.svg'
+        '/time-sand-svgrepo-com.svg': 'ImagesFolder/time-sand-svgrepo-com.svg',
+        '/Andra.png': 'ImagesFolder/Andra.png',
+        '/Nicole.png': 'ImagesFolder/Nicole.png',
+        '/Armin.png': 'ImagesFolder/Armin.png',
+        '/Roman.png': 'ImagesFolder/Nicole.png',
+        '/gruppenfoto.jpg': 'ImagesFolder/gruppenfoto.jpg',
+        '/Instagram.png': 'ImagesFolder/Instagram.png',
+        '/Maps.png': 'ImagesFolder/Maps.png',
+        '/Youtube.png': 'ImagesFolder/Youtube.png',
+        '/Facebook.webp': 'ImagesFolder/Facebook.webp',
+        '/Email.png': 'ImagesFolder/Email.png',
+        '/Schritt1.png': 'ImagesFolder/Schritt1.png',
+        '/Schritt2.png': 'ImagesFolder/Schritt2.png',
+        '/Schritt3.png': 'ImagesFolder/Schritt3.png',
+        '/Schritt4.png': 'ImagesFolder/Schritt4.png'
     };
 
     var filePath = assetPathMap[url];
@@ -99,6 +113,10 @@ function serveStaticAssets(url, res) {
                 break;
             case '.mp4':
                 contentType = 'video/mp4';
+                break;
+                
+            case '.webp':
+                contentType = 'image/webp';
                 break;
         }
 
