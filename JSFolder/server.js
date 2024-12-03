@@ -47,20 +47,20 @@ function serveFile(res, filePath, contentType) {
 function serveStaticAssets(url, res) {
    
     var assetPathMap = {
-        '/style.css': 'style.css',
-        '/LandingCSS.css': 'LandingCSS.css',
-        '/tutorPage.css': 'tutorPage.css',
-        '/Kontaktliste.css': 'Kontaktliste.css',
-        '/WieFunktionierts.css': 'WieFunktionierts.css',
-        '/TermsOfUse.css': 'TermsOfUse.css',
-        '/privacy-policy.css': 'privacy-policy.css',
-        '/LandingJS.js': 'LandingJS.js', 
-        '/tutorPage.js': 'tutorPage.js', 
-        '/support-svgrepo-com.svg': 'support-svgrepo-com.svg',
-        '/learn-svgrepo-com.svg': 'learn-svgrepo-com.svg',
-        '/LandingLogo.svg': 'LandingLogo.svg',
-        '/favicon.ico': 'favicon.ico',
-        '/time-sand-svgrepo-com.svg': 'time-sand-svgrepo-com.svg'
+        '/style.css': 'CSSFolder/style.css',
+        '/LandingCSS.css': 'CSSFolder/LandingCSS.css',
+        '/tutorPage.css': 'CSSFolder/tutorPage.css',
+        '/Kontaktliste.css': 'CSSFolder/Kontaktliste.css',
+        '/WieFunktionierts.css': 'CSSFolder/WieFunktionierts.css',
+        '/TermsOfUse.css': 'CSSFolder/TermsOfUse.css',
+        '/privacy-policy.css': 'CSSFolder/privacy-policy.css',
+        '/LandingJS.js': 'JSFolder/LandingJS.js', 
+        '/tutorPage.js': 'JSFolder/tutorPage.js', 
+        '/support-svgrepo-com.svg': 'ImagesFolder/support-svgrepo-com.svg',
+        '/learn-svgrepo-com.svg': 'ImagesFolder/learn-svgrepo-com.svg',
+        '/LandingLogo.svg': 'ImagesFolder/LandingLogo.svg',
+        '/favicon.ico': 'ImagesFolder/favicon.ico',
+        '/time-sand-svgrepo-com.svg': 'ImagesFolder/time-sand-svgrepo-com.svg'
     };
 
     var filePath = assetPathMap[url];
